@@ -1,0 +1,15 @@
+#hw03-default-text {
+    position: absolute;
+    top: 50px; /* Настройте по вашему усмотрению */
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+#hw03-input {
+    margin-top: 20px; /* Добавляет пространство между h1 и input */
+}
+#hw03 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
