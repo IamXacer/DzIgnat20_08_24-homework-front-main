@@ -1,15 +1,21 @@
-#hw03-default-text {
-    position: absolute;
-    top: 50px; /* Настройте по вашему усмотрению */
-    left: 0;
-    right: 0;
-    text-align: center;
+/* HW3.module.css */
+.container {
+    min-height: 200px;
+    padding: 20px;
 }
-#hw03-input {
-    margin-top: 20px; /* Добавляет пространство между h1 и input */
+
+.text {
+    margin-top: 20px;
 }
-#hw03 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.button {
+    margin-top: 10px;
+}
+
+.defaultText {
+    /* Стили для заголовка по умолчанию */
+}
+
+.taskList {
+    margin-top: 50px;
 }
