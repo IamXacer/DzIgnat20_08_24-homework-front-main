@@ -1,20 +1,30 @@
-.input:focus {
-}
-
-.input {
-}
-
-.inputWrapper {
-}
-
 .superInput {
+    margin: 10px;
+
+    background: #536544;
+    color: #0de354;
 }
+.stand {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в столбик */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+.input:focus {
+    outline: none;
+    border-radius: 190px;
+    color: #ffdd00;
+    border: 2px solid aqua;
+}
+
 
 .errorInput {
-}
-
-.errorInput:focus {
+    margin: 10px;
+    background: red;
+    border: 2px solid aqua;
 }
 
 .error {
+    color: red;
+    height: 21px;
+    margin-left: 10px;
 }

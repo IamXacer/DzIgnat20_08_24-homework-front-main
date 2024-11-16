@@ -37,42 +37,46 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
     }
 ) => {
     const [editMode, setEditMode] = useState<boolean>(false)
-    const {children, onDoubleClick, className, defaultText, ...restSpanProps} =
-    spanProps || {}
+    const {children, onDoubleClick, className,
+        defaultText, ...restSpanProps} = spanProps || {}
 
     const onEnterCallback = () => {
         // выключить editMode при нажатии Enter // делают студенты
-
-        onEnter?.()
+        setEditMode(false)
+        onEnter  &&onEnter?.()
     }
-    const onBlurCallback = (e: React.FocusEvent<HTMLInputElement>) => {
+    const onBlurCallback
+        = (e: React.FocusEvent<HTMLInputElement>) => {
         // выключить editMode при нажатии за пределами инпута // делают студенты
-
-        onBlur?.(e)
+        setEditMode(false)
+        onBlur &&onBlur?.(e)
     }
     const onDoubleClickCallBack = (
         e: React.MouseEvent<HTMLSpanElement, MouseEvent>
     ) => {
         // включить editMode при двойном клике // делают студенты
-
-        onDoubleClick?.(e)
+        setEditMode(true)
+        onDoubleClick   && onDoubleClick?.(e)
     }
 
-    const spanClassName = s.span
-        + (className ? ' ' + className : '')
+    const spanClassName = s.span + (className ? ' ' + className : '')
 
     return (
-        <>
+        < div className={s.spanBlock}>
             {editMode ? (
-                <SuperInputText
-                    autoFocus={autoFocus || true}
-                    onBlur={onBlurCallback}
-                    onEnter={onEnterCallback}
-                    className={s.input}
-                    {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
-                />
+                <div className={s.inputContainer}>
+                    <div className={s.input}>
+                        <SuperInputText
+                            autoFocus={autoFocus || true}
+                            onBlur={onBlurCallback}
+                            onEnter={onEnterCallback}
+                            className={s.input}
+                            {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+                        />
+                    </div>
+                </div>
             ) : (
-                <div className={s.spanBlock}>
+                <div >
                     <img
                         src={editIcon}
                         className={s.pen}
@@ -89,7 +93,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                     </span>
                 </div>
             )}
-        </>
+        </div>
     )
 }
 

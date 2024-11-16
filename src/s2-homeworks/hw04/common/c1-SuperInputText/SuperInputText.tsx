@@ -7,6 +7,7 @@ import React, {
 } from 'react'
 import s from './SuperInputText.module.css'
 
+
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement>
@@ -36,23 +37,28 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
     }
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange?.(e) // если есть пропс onChange, то передать ему е (поскольку onChange не обязателен)
+        onChange?.(e);
+        // если есть пропс onChange, то передать ему е (поскольку onChange не обязателен)
 
         onChangeText?.(e.currentTarget.value)
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
-        onKeyPress?.(e)
+        onKeyPress  && onKeyPress?.(e)
 
-        onEnter && // если есть пропс onEnter
-        e.key === 'Enter' && // и если нажата кнопка Enter
-        onEnter() // то вызвать его
+        onEnter // если есть пропс onEnter
+        && e.key === 'Enter'// и если нажата кнопка Enter
+        &&  onEnter() // то вызвать его
     }
 
-    const finalSpanClassName = s.error
-        + (spanClassName ? ' ' + spanClassName : '')
-    const finalInputClassName = s.input
-        + (error ? ' ' + s.errorInput : ' ' + s.superInput)
-        + (className ? ' ' + className : '') // задача на смешивание классов
+    const getClassName = (...classNames: (string | undefined)[]) => classNames.filter(Boolean).join(' ');
+
+    const finalSpanClassName = getClassName(s.error, spanClassName);
+  /*  const finalInputClassName = getClassName(
+        s.input,
+        error ? s.errorInput : s.superInput,
+        className
+    ); */// задача на смешивание классов
+    const finalInputClassName = `${s.input} ${error ? s.errorInput : s.superInput} ${className}`; // задача на смешивание классов
 
     return (
         <div className={s.inputWrapper}>
