@@ -1,0 +1,26 @@
+.buttonsContainer {
+    display: flex;
+    justify-content: center; /* Распределение кнопок по ширине контейнера */
+   /* Добавляем отступы вокруг кнопок */
+    background-color: #f0f0f0; /* Цвет фона контейнера, если нужно */
+}
+
+.editableSpanContainer {
+    display: flex;
+    justify-content: center;
+}
+.editableSpan{
+
+}
+.hw5Container{
+    background-color: #d2dae5;
+}
+.buttonsContainer .customButtons {
+    background-color: #4CAF50; /* Цвет кнопок */
+    color: #963939; /* Цвет текста на кнопках */
+    /* Дополнительные стили, если необходимо */
+}
+.superButton{
+    margin-right: 10px;
+    margin-bottom: 50px;
+}

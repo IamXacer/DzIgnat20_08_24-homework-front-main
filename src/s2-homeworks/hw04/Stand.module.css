@@ -1,0 +1,25 @@
+.stand {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем элементы по вертикали */
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column; /* Отображаем элементы в столбик */
+    align-items: center; /* Центрируем элементы по горизонтали */
+
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 4px;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+
+}

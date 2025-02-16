@@ -1,0 +1,73 @@
+import React, {
+    SelectHTMLAttributes,
+    DetailedHTMLProps,
+    ChangeEvent,
+} from 'react'
+import s from './SuperSelect.module.css'
+
+type DefaultSelectPropsType = DetailedHTMLProps<
+    SelectHTMLAttributes<HTMLSelectElement>,
+    HTMLSelectElement
+>
+
+type SuperSelectPropsType = DefaultSelectPropsType & {
+    options?: any[]
+    onChangeOption?: (option: any) => void
+}
+
+const SuperSelect: React.FC<SuperSelectPropsType> = ({
+    options,
+    className,
+    onChange,
+    onChangeOption,
+    ...restProps
+}) => {
+    const mappedOptions: any[] = options
+        ? options.map((o) => (
+              <option
+                  id={'hw7-option-' + o.id}
+                  className={s.option}
+                  key={o.id}
+                  value={o.id}
+              >
+                  {o.value}
+              </option>
+          ))
+        : [] // map options with key
+    const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
+        if (onChange) {
+            onChange(e); // Вызываем родительский onChange, если он передан
+        }
+        const selectedId = Number(e.currentTarget.value); // Получаем выбранное значение как id
+        const selectedOption = options?.find(o => o.id === selectedId); // Находим объект с id
+        if (selectedOption && onChangeOption) {
+            onChangeOption(selectedOption); // Передаем выбранный объект в onChangeOption
+        }
+    };
+
+   /* const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
+        if (onChange) {
+            onChange(e); // Проверяем, существует ли onChange, и вызываем его
+        }
+        const value = Number(e.currentTarget.value);
+        if (onChangeOption) {
+            onChangeOption(value);
+        }
+    };*/
+
+
+
+    const finalSelectClassName = s.select + (className ? ' ' + className : '')
+
+    return (
+        <select
+            className={finalSelectClassName}
+            onChange={onChangeCallback}
+            {...restProps}
+        >
+            {mappedOptions}
+        </select>
+    )
+}
+
+export default SuperSelect
