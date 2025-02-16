@@ -21,6 +21,6 @@ padding-right: 10px;
     padding-left: 80px;
 }
 
-select, input[type="radio"] {
+select,  input[type="radio"] {
     margin-right: 5px; /* Уменьшаем отступ справа от элементов */
 }
