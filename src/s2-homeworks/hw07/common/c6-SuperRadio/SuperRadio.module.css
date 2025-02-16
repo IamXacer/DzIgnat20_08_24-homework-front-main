@@ -1,23 +1,14 @@
 .radio {
-    appearance: none; /* Скрываем стандартный вид */
-    width: 16px; /* Задаем фиксированную ширину */
-    height: 16px; /* Задаем фиксированную высоту */
-    border: 2px solid #0de354; /* Граница для радиокнопки */
-    border-radius: 50%; /* Радиус для круга */
-    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
     position: relative;
-    cursor: pointer;
 }
 
 .radio:checked {
-    background-color: #0de354; /* Цвет фона при выборе */
-}
-
-.label {
-    display: inline-flex;
-    align-items: center; /* Выравнивание текста и радио по центру */
-    margin-right: 8px; /* Расстояние между радио и текстом */
-    padding: 4px; /* Добавляем немного отступа */
+    background-color: black;
 }
 
 .radio:checked::before {
@@ -25,13 +16,21 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 8px; /* Размер внутреннего круга */
-    height: 8px;
-    background-color: white; /* Цвет внутреннего круга */
+    width: 10px; /* Увеличьте размер внутреннего круга */
+    height: 10px; /* Увеличьте размер внутреннего круга */
+    background-color: #000000;
     border-radius: 50%;
-    transform: translate(-50%, -50%); /* Центрирование внутреннего круга */
+    transform: translate(-50%, -50%);
 }
-/*
-const onChangeOption = (newValue:number) => {
-                                          setValue(Number(newValue)); // Убедитесь, что значение преобразовано в число
-                                          };*/
+.options {
+    display: flex;
+    flex-direction: column; /* Расположить элементы по вертикали */
+    gap: 10px; /* Добавить отступы между радиокнопками */
+    justify-content: flex-start; /* Выравнивание по верхнему краю */
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

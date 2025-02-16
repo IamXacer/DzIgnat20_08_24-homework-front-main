@@ -49,7 +49,7 @@
 
         const mappedOptions: React.ReactNode[] = options
             ? options.map((o) => (
-                <label key={name + '-' + o.id} className={s.label}>
+                <label key={name + '-' + o.id} className={s.label} >
                     <input
                         id={id + '-input-' + o.id} // Проверьте правильность генерации id
                         type={'radio'}
@@ -57,8 +57,10 @@
                         value={o.id}
                         checked={o.id === value}
                         onChange={onChangeCallback}
+                        className={finalRadioClassName}
                     />
-                    <span id={id + '-span-' + o.id}>{o.value}</span>
+                    <span id={id + '-span-' + o.id} className={spanClassName}>{o.value}
+                    </span>
                 </label>
 
             ))
