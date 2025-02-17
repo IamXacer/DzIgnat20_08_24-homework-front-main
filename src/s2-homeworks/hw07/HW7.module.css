@@ -1,2 +1,30 @@
 .container {
+    display: grid;
+    grid-template-columns: auto auto; /* Автоматическая ширина для колонок */
+    gap: 0; /* Убираем отступы между колонками */
+    justify-content: flex-start; /* Центрируем элементы по горизонтали */
+    align-items: flex-start; /* Центрируем элементы по вертикали */
+    padding-left: 30px;
+    padding-top: 20px;
 }
+
+
+
+
+.selectWrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Отступ между элементами внутри контейнера */
+padding-right: 10px;
+}
+.radioWrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Отступ между элементами внутри контейнера */
+    padding-left: 80px;
+}
+
+select,  input[type="radio"] {
+    margin-right: 5px; /* Уменьшаем отступ справа от элементов */
+}
+

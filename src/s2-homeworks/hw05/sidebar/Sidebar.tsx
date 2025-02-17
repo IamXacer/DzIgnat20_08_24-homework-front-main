@@ -12,7 +12,11 @@ export const Sidebar: FC<SidebarProps> = ({ open, handleClose }) => {
     return (
         <div className={`${s.sidebar} ${open ? s.open : ''}`}>
             <button className={s.closeButton} onClick={handleClose}>×</button>
-            <nav className={s.navLinks}>
+
+       {/*     <nav className={s.navLinks}>*/}
+
+            <nav className={s.navLinks} onClick={handleClose}>
+
                 <NavLink
                     to={PATH.PRE_JUNIOR}
                     className={({ isActive }) => isActive ? `${s.link} ${s.activeLink}` : s.link}
