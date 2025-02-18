@@ -1,15 +1,16 @@
 .radio {
-    width: 20px; /* Задаем фиксированную ширину */
-    height: 20px; /* Задаем фиксированную высоту */
-    border: 2px solid #0de354; /* Граница для радиокнопки */
-    border-radius: 50%; /* Радиус для круга */
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF; /* Default background for the unchecked state */
+    appearance: none; /* Removes the default radio button styling */
+    border-radius: 50%; /* Ensure the outer circle is round */
+    border: 2px solid #000000; /* Border for the unselected state */
+    position: relative; /* To position the inner circle */
 }
 
 .radio:checked {
-    background-color: black; /* Цвет фона при выборе */
+    background-color: #FFFFFF; /* Keep the background white for the checked state */
+    border: 2px solid #000000; /* Border remains black */
 }
 
 .radio:checked::before {
@@ -17,9 +18,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10px; /* Размер внутреннего круга */
+    width: 10px; /* Inner circle size, smaller than the outer circle */
     height: 10px;
-    background-color: white; /* Цвет внутреннего круга */
+    background-color: #000000; /* Color of the inner circle */
     border-radius: 50%;
-    transform: translate(-50%, -50%); /* Центрирование внутреннего круга */
+    transform: translate(-50%, -50%); /* Center the inner circle */
 }

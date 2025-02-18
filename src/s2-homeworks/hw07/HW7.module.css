@@ -4,8 +4,8 @@
     gap: 0; /* Убираем отступы между колонками */
     justify-content: flex-start; /* Центрируем элементы по горизонтали */
     align-items: flex-start; /* Центрируем элементы по вертикали */
-    padding-left: 30px;
-    padding-top: 20px;
+    padding-left: 60px;
+    padding-top: 30px;
 }
 
 
@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     gap: 5px; /* Отступ между элементами внутри контейнера */
-padding-right: 10px;
+    padding-right: 10px;
 }
 .radioWrapper {
     display: flex;

@@ -36,15 +36,13 @@
             : [] // map options with key
 
         const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-            if (onChange) {
-                onChange(e); // Вызываем родительский onChange, если он передан
-            }
-            const selectedId = Number(e.currentTarget.value); // Получаем выбранное значение как id
-            const selectedOption = options?.find(o => o.id === selectedId); // Находим объект с id
-            if (selectedOption && onChangeOption) {
-                onChangeOption(selectedOption); // Передаем выбранный объект в onChangeOption
 
-            }
+          const selectId = Number(e.currentTarget.value)// Получаем выбранное значение как id
+            const selectedOption = options?.find(o=>o.id === selectId )// Находим объект с id
+         if(selectedOption && onChangeOption){
+             onChangeOption(selectedOption)
+         }
+
         };
 
 

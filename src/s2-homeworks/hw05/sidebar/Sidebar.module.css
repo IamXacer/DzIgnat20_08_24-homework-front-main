@@ -39,6 +39,6 @@
 }
 
 .activeLink {
-    color: blue; /* Цвет для активной ссылки */
+    color: #000000; /* Цвет для активной ссылки */
     font-weight: bold;
 }

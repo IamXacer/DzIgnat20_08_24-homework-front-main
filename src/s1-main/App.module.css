@@ -1,12 +1,21 @@
-.App {
-    --header_height: 60px;
-}
+    .App {
+        display: flex;
+        flex-direction: column;
+        --header_height: 60px;
+    }
 
-.hw {
-    background-color: #e5f5fa;
-}
+    .hw {
+        background-color: #e5f5fa;
+        width: 100%;
+        min-height: 373px; /* Устанавливаем минимальную высоту */
+        margin-bottom: 20px; /* Добавляем отступ снизу */
+        border-width: 1px;
+        display: flex; /* Добавляем flex для правильного распределения */
+        flex-direction: column; /* Делаем элементы внутри вертикальными */
+        flex-grow: 1; /* Разрешаем элементам растягиваться */
+    }
 
-.hwTitle {
-background-color: #61dafb;
+    .hwTitle {
+    background-color: #61dafb;
 
-}
+    }
